@@ -9,6 +9,7 @@ body{
     background-color: #000000;
     font-family: 'Roboto', sans-serif;
     color: #F8F9FA;
+	background-image: url("../Images/background.gif");
 }
 a{
     color: #17A2B8;
@@ -17,42 +18,24 @@ a:hover{
     color:#007BFF
 }
 
-
-
-
-/*SNOW CSS*/
-.snow {
-	position: absolute;
-	min-width: 100vw;
-	min-height: 100vh;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
+.logo{
+	border-radius: 100%;
+	animation-name: float;
+    animation-duration: 3s;
+    animation-iteration-count:infinite;
 }
 
-.snow .svg {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
-
-#snow-top-layer {
-	will-change: transform;
-	transform: translateY(-768px);
-	animation: fall 22.5s infinite linear;
-}
-
-#snow-bottom-layer {
-	will-change: transform;
-	transform: translateY(-768px);
-	animation: fall 45s infinite linear;
-}
-
-@keyframes fall {
-	
-	100% {
-		transform: translateY(0);
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
 	}
-	
-}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+  }
