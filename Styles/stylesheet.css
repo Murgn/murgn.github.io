@@ -1,34 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-head{
+head
+{
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
 }
 
-body{
+body
+{
     background-color: #000000;
     font-family: 'Roboto', sans-serif;
     color: #F8F9FA;
 	background-image: url("../Images/background.gif");
 }
-a{
+
+a
+{
     color: #17A2B8;
 }
-a:hover{
-    color:#007BFF
+
+a:hover
+{
+    color:#007BFF;
 }
 
-.logo{
-	border-radius: 100%;
+.vertical-center 
+{
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 100vh; /* These two lines are counted as one :-)       */
+
+	display: flex;
+	align-items: center;
+}
+
+.logo
+{
 	animation-name: float;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count:infinite;
 }
 
-@keyframes float {
+@keyframes float 
+{
 	0% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
+		transform: translatey(20px);
 	}
 	50% {
 		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
@@ -36,6 +52,42 @@ a:hover{
 	}
 	100% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
+		transform: translatey(20px);
 	}
   }
+
+.slide-in-left
+{
+	opacity: 0.0;
+	transform: translateX(-100%);
+	animation: slide-in 1s forwards;
+}
+
+.slide-in-right
+{
+	opacity: 0.0;
+	transform: translateX(100%);
+	animation: slide-in 1s forwards;
+}
+
+.intro
+{
+	color: #17A2B8;
+	opacity: 0.0;
+	transform: translateY(200%);
+	animation: slide-in 1s forwards, intro 3s forwards;
+	text-decoration-line: underline;
+}
+
+@keyframes slide-in 
+{ 
+	100% { transform: translateX(0%); transform: translateY(0%); opacity: 1.0; }
+}
+
+@keyframes intro
+{
+	0% { opacity: 0; }
+	30% { opacity: 1; }
+	60% { opacity: 1; }
+	100% { opacity: 0; }
+}
